@@ -7,9 +7,9 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>library</artifactId>
-  <name>IOIO-library</name>
-  <packaging>jar</packaging>
+  <artifactId>lib-bluetooth</artifactId>
+  <name>IOIO-lib-bluetooth</name>
+  <packaging>apklib</packaging>
 
   <parent>
     <groupId>ioio</groupId>
@@ -18,29 +18,30 @@
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
+  <dependencies>
+    <dependency>
+      <groupId>android</groupId>
+      <artifactId>android</artifactId>
+      <version>2.3.3_r2</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.android.annotations</groupId>
+      <artifactId>annotations</artifactId>
+      <version>22.2.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>ioio</groupId>
+      <artifactId>library</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <directory>target-mvn</directory>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.8</version>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>target/pc/src/ioio/lib/spi/</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -49,16 +50,6 @@
           <source>1.6</source>
           <target>1.6</target>
         </configuration>
-      </plugin>
-      <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-jar-plugin</artifactId>
-	<version>2.3.1</version>
-	<configuration>
-	  <excludes>
-	    <exclude>**/Log.*</exclude>
-	  </excludes>
-	</configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -72,6 +63,20 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+        <artifactId>android-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <inherited>true</inherited>
+        <extensions>true</extensions>
+        <configuration>
+          <sdk>
+            <platform>7</platform>
+          </sdk>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 

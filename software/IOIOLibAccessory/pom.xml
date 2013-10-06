@@ -7,29 +7,22 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ioio</groupId>
-  <artifactId>libaccessory</artifactId>
-  <version>1.0</version>
+  <artifactId>lib-accessory</artifactId>
+  <name>IOIO-lib-accessory</name>
   <packaging>apklib</packaging>
 
-  <name>IOIOLib</name>
-  <inceptionYear>2007</inceptionYear>
-
   <parent>
-    <groupId>com.smartnsoft</groupId>
-    <artifactId>distribution</artifactId>
+    <groupId>ioio</groupId>
+    <artifactId>parent</artifactId>
     <version>1.0</version>
+    <relativePath>../../pom.xml</relativePath>
   </parent>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 
   <dependencies>
     <dependency>
       <groupId>android</groupId>
       <artifactId>android</artifactId>
-      <version>2.1_r3</version>
+      <version>2.3.3_r2</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -43,7 +36,6 @@
       <artifactId>usb</artifactId>
       <version>10_r2</version>
     </dependency>
-
     <dependency>
       <groupId>ioio</groupId>
       <artifactId>library</artifactId>
@@ -91,7 +83,7 @@
         <extensions>true</extensions>
         <configuration>
           <sdk>
-            <platform>7</platform>
+            <platform>10</platform>
           </sdk>
         </configuration>
       </plugin>
