@@ -25,6 +25,7 @@ local.properties
 *.idea/
 gen-external-apklibs/
 
-# Backup files
+# Crap files
 *.*~
 *#
+.DS_Store

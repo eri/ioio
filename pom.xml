@@ -31,6 +31,7 @@
     <module>software/IOIOLib/target/android</module>
     <module>software/IOIOLibAccessory</module>
     <module>software/IOIOLibBT</module>
+    <module>software/IOIOLibAndroidDevice</module>
   </modules>
 
 </project>
