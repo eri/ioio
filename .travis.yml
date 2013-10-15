@@ -1,3 +1,4 @@
 language: java
 before_install:
-	- echo 'Test !'
+  - echo 'Test !'
+script: mvn clean install
